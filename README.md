@@ -2,7 +2,7 @@
 
 A dependency-free, static GitHub repository directory. Six topics, **up to ten repositories per topic**. The existing radar illustration, blue dark/light palette, monospaced repository names and responsive list are preserved. Interface text is Vietnamese; original GitHub descriptions are preserved alongside optional, clearly labeled Vietnamese editorial profiles.
 
-**Local implementation only. No commit, push, remote configuration, workflow execution or Pages activation is part of setup.** Production JSON intentionally starts empty. Trending stays pending until its definition is approved; no 90-day heuristic is implemented.
+**Setup does not commit, push, configure remote services or activate scheduled workflows.** The checked-in JSON contains a collected GitHub snapshot and one-time Vietnamese editorial profiles. Trending stays pending until its definition is approved; no 90-day heuristic is implemented.
 
 ## Run locally
 
@@ -21,7 +21,7 @@ Individual gates: `npm run check`, `npm run lint`, `npm test`, `npm run build`. 
 
 ## Collect real metadata (optional, contacts GitHub)
 
-The initial dataset is honest and empty. Offline tests contain all sample fixtures. Refresh is **not** part of verify/build/preview. Review `config/topics.json` before making real requests.
+The site uses the stored snapshot in `data/repositories.json`; offline tests keep their sample fixtures separate. Refresh is **not** part of verify/build/preview or Vercel deployment. Review `config/topics.json` before making real requests.
 
 ```sh
 npm run refresh
@@ -68,7 +68,20 @@ Search and language filters affect only the published selection; alternate sorts
 
 The panel presents optional editorial, original metadata and source links, with explicit missing-description/license/feature-content fallbacks. All supplied text is escaped before HTML rendering; external URLs are checked again at rendering. GitHub URLs must match the repo's `https://github.com/owner/name`; homepage and editorial source URLs use HTTP/HTTPS without credentials. A valid URL is **not a safety endorsement**. There are no external embeds. Required data load errors offer retry rather than masquerading as empty results. UTC timestamps display in Vietnam time (UTC+7); metadata stale warnings appear after 48 hours, updated on page visibility and each minute. No artificial numbers or sample repo descriptions ship in production.
 
-## Deployment draft — NOT ACTIVATED
+## Deploy the static site to Vercel
+
+`vercel.json` sets the framework to Other, runs `npm run build`, and publishes only `dist`. No Docker, Supabase, Vercel Functions or runtime environment variables are required. Prefer Node.js 24.x in Vercel Project Settings to match local verification; the project requires Node.js 22 or newer.
+
+1. Run `npm run verify` locally.
+2. Review and commit/push the intended source changes to the GitHub branch Vercel will import, including `vercel.json`, `config/`, `shared/`, `assets/`, `scripts/`, `package.json`, `index.html`, and both `data/repositories.json` and `data/editorial.json`. This is an operator step, not something the build performs. Never include credentials; `dist` remains ignored and is built by Vercel.
+3. In Vercel, add/import the GitHub repository. Use preset **Other**, root directory **./** when package.json is at the repository root, build command **npm run build**, and output directory **dist**. The configuration file supplies the last two settings; remove conflicting project overrides. Leave the install command at its default and environment variables empty.
+4. Deploy and check the homepage, topic navigation and a detail deep link. Verify `/data/repositories.json`, `/data/editorial.json` and `/shared/editorial.js` return successfully on the deployed domain. Hash routing needs no catch-all rewrite.
+
+Deployment publishes the stored metadata and editorial; it does not collect fresh data or activate the midnight schedule. `GITHUB_TOKEN` is only needed if a separately executed refresh uses authenticated GitHub requests, not for this static build. Do not change the build command to include refresh: an API outage should not block publishing an existing valid snapshot.
+
+For a later approved schedule, adapt collection/persistence to the Vercel deployment path rather than enabling the Pages draft below unchanged. Verify how the selected commit/token or explicit deployment mechanism triggers Vercel; do not assume a bot commit automatically produces a deployment. Scheduling and remote deployment have not been activated by adding this configuration.
+
+## GitHub Pages deployment draft — NOT ACTIVATED
 
 `.github/workflows/refresh.yml.disabled` is deliberately **not a recognized workflow extension**. It is inert locally and would stay inert if uploaded unchanged. It is a design draft, not an executed or production-validated workflow. Nothing here enables GitHub Actions, Pages, billing or a remote repository.
 
@@ -78,8 +91,8 @@ The draft specifies `0 17 * * *` (00:00 Vietnam), `workflow_dispatch`, default-b
 
 ## Verification limits / next acceptance checks
 
-`node:test` covers offline API fixtures, retries/timeouts, filtering/ranking, partial/full failure, atomic persistence and locking, schema guards, build allowlist, preview security, frontend helpers and a DOM-stub navigation lifecycle. **DOM stubs are not browser validation.** No browser packages are installed by this project. Native dialog behavior, visual contrast, mobile layout, actual keyboard handling, project-path loading and assistive technology should be checked in a real browser. Test at 360px and desktop, open/close details after filtering, use Tab/Shift+Tab/Escape/Back/Forward, reload a deep link and exercise load failure/stale data. Production is empty until an operator explicitly refreshes.
+`node:test` covers offline API fixtures, retries/timeouts, filtering/ranking, partial/full failure, atomic persistence and locking, schema guards, build allowlist, preview security, frontend helpers and a DOM-stub navigation lifecycle. **DOM stubs are not browser validation.** No browser packages are installed by this project. Native dialog behavior, visual contrast, mobile layout, actual keyboard handling, project-path loading and assistive technology should be checked in a real browser. Test at 360px and desktop, open/close details after filtering, use Tab/Shift+Tab/Escape/Back/Forward, reload a deep link and exercise load failure/stale data. Production displays the snapshot included in its build, not a live per-visitor API response.
 
-Live query relevance, real GitHub rate-limit behavior, deployment conflicts, action pins, Pages publication and two actual scheduled runs remain operational acceptance work. Trending definition is still unresolved. No SLA, quality/security ranking, exhaustive coverage, free-tier permanence or repository suitability is promised.
+Query relevance needs ongoing review even though an initial live collection succeeded. Deployment conflicts, action pins, Vercel/Pages publication and actual scheduled runs remain operational acceptance work. Trending definition is still unresolved. No SLA, quality/security ranking, exhaustive coverage, free-tier permanence or repository suitability is promised.
 
-During implementation, the local gates were exercised on Node.js v24.14.0 / npm 11.7.0. The `camoufox-browser` command was not available in the environment, so real browser validation could not run; no browser dependencies were installed. No live GitHub API request was made. Node.js 22 is the declared minimum but was not separately exercised in this environment.
+During implementation, the local gates were exercised on Node.js v24.14.0 / npm 11.7.0. The `camoufox-browser` command was not available in the environment, so automated real-browser validation could not run; no browser dependencies were installed. A later approved live GitHub refresh populated five topics, and a one-time source review added profiles for the 45 unique repositories in that snapshot. Node.js 22 is the declared minimum but was not separately exercised in this environment.
