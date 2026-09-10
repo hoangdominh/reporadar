@@ -27,6 +27,12 @@ test('build publishes exactly the static allowlist and no fixture, credentials, 
   for (const file of PUBLIC_FILES) assert.equal(await readFile(new URL(`dist/${file}`, root), 'utf8'), await readFile(new URL(file, root), 'utf8'));
   const html = await readFile(new URL('dist/index.html', root), 'utf8');
   assert.match(html, /src="\.\/assets\/app.js"/);
+  const favicon = html.match(/<link rel="icon" type="image\/svg\+xml" sizes="any" href="(data:image\/svg\+xml,[^"]+)"/);
+  assert.ok(favicon, 'Build must include the self-contained radar favicon');
+  const svg = decodeURIComponent(favicon[1].split(',')[1]);
+  assert.match(svg, /viewBox='0 0 32 32'/);
+  assert.match(svg, /<circle/);
+  assert.doesNotMatch(svg, /<script|<image|<foreignObject|\son\w+=/i);
   assert.doesNotMatch(html, /const repos\s*=|repo mẫu|Ngày thêm mẫu/);
   await build(root);
   assert.equal((await readdir(root)).some(file => file.startsWith('.dist-')), false);
@@ -82,7 +88,10 @@ test('preview serves project-base-path assets, supports HEAD, blocks secrets/tra
   const server = await createPreview({ root, base: '/reporadar/' });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise(resolve => server.close(resolve)));
-  assert.equal((await get(server, '/reporadar/')).status, 200);
+  const page = await get(server, '/reporadar/');
+  assert.equal(page.status, 200);
+  assert.match(page.headers['content-security-policy'], /img-src 'self' data:;/);
+  assert.match(page.body, /rel="icon"/);
   const script = await get(server, '/reporadar/assets/app.js');
   assert.equal(script.status, 200);
   assert.match(script.headers['content-type'], /javascript/);

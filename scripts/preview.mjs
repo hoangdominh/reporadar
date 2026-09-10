@@ -23,7 +23,7 @@ export async function createPreview({ root = new URL('dist/', ROOT), base = '/' 
       response.writeHead(200, {
         'Content-Type': MIME[extname(file)], 'Content-Length': body.length,
         'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',
-        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
       });
       response.end(request.method === 'HEAD' ? undefined : body);
     } catch { send(404, 'Not found'); }
