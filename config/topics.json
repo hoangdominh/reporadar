@@ -1,0 +1,49 @@
+[
+  {
+    "id": "agent-skills", "name": "Agent Skills", "icon": "✧",
+    "description": "Bổ sung kỹ năng và quy trình làm việc cho coding agent.",
+    "queries": ["topic:agent-skills", "topic:claude-skills", "\"agent skills\" in:name,description"],
+    "minStars": 0, "exclude": [], "excludeKeywords": ["tutorial"],
+    "policy": "Accept skill collections and awesome lists; exclude tutorial metadata. Broad agent frameworks need an explicit skills match.",
+    "publicOnly": true, "allowArchived": false, "allowForks": false, "limit": 10, "candidatesPerQuery": 100
+  },
+  {
+    "id": "mcp-servers", "name": "MCP Servers", "icon": "⌘",
+    "description": "Kết nối trợ lý AI với dữ liệu và công cụ làm việc.",
+    "queries": ["topic:mcp-server", "topic:mcp-servers", "\"mcp server\" in:name,description"],
+    "minStars": 0, "exclude": [], "excludeKeywords": ["tutorial", "sdk"],
+    "policy": "Accept servers, reference implementations and server collections; exclude SDK/tutorial metadata.",
+    "publicOnly": true, "allowArchived": false, "allowForks": false, "limit": 10, "candidatesPerQuery": 100
+  },
+  {
+    "id": "developer-tools", "name": "Developer Tools", "icon": "⌨",
+    "description": "Công cụ hữu ích cho vòng lặp phát triển mỗi ngày.",
+    "queries": ["topic:developer-tools", "topic:cli", "topic:debugging"],
+    "minStars": 10, "exclude": [], "excludeKeywords": ["tutorial", "awesome"],
+    "policy": "Accept developer tools and testing frameworks; exclude tutorial and awesome-list metadata.",
+    "publicOnly": true, "allowArchived": false, "allowForks": false, "limit": 10, "candidatesPerQuery": 100
+  },
+  {
+    "id": "devops", "name": "DevOps", "icon": "⚙",
+    "description": "Từ hạ tầng và CI/CD đến quản lý container.",
+    "queries": ["topic:devops", "topic:kubernetes", "topic:infrastructure-as-code"],
+    "minStars": 10, "exclude": [], "excludeKeywords": ["tutorial", "awesome"],
+    "policy": "Accept operational tools and infrastructure frameworks; exclude tutorial and awesome-list metadata.",
+    "publicOnly": true, "allowArchived": false, "allowForks": false, "limit": 10, "candidatesPerQuery": 100
+  },
+  {
+    "id": "self-hosted", "name": "Self-hosted", "icon": "▣",
+    "description": "Những công cụ bạn có thể vận hành trên hạ tầng của mình.",
+    "queries": ["topic:self-hosted", "topic:selfhosted"],
+    "minStars": 10, "exclude": [], "excludeKeywords": ["tutorial", "awesome"],
+    "policy": "Accept deployable applications; exclude tutorial and awesome-list metadata. Metadata is not proof of deployability.",
+    "publicOnly": true, "allowArchived": false, "allowForks": false, "limit": 10, "candidatesPerQuery": 100
+  },
+  {
+    "id": "trending", "name": "Trending", "icon": "↗",
+    "description": "Chờ chốt định nghĩa repo mới nổi; chưa thu thập hoặc xếp hạng.",
+    "queries": [], "minStars": 0, "exclude": [], "excludeKeywords": [],
+    "policy": "Pending definition. No 90-day heuristic or all-time ranking substitution.",
+    "publicOnly": true, "allowArchived": false, "allowForks": false, "limit": 10, "candidatesPerQuery": 100
+  }
+]

@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "repositories": {
+    "291137": {
+      "full_name": "ohmyzsh/ohmyzsh",
+      "overview": "Oh My Zsh giúp tổ chức cấu hình terminal Zsh bằng plugin, alias và theme có sẵn. Thay vì tự viết mọi tiện ích shell, bạn bật những plugin phù hợp với công việc và giữ phần tùy chỉnh riêng trong cùng cấu hình.",
+      "capabilities": ["Bật plugin và alias cho Git cùng các công cụ thường dùng qua .zshrc.", "Đổi giao diện dấu nhắc lệnh bằng theme.", "Thêm hoặc ghi đè plugin, hàm và cấu hình trong thư mục custom.", "Cấu hình cơ chế nhắc cập nhật hoặc tự cập nhật."],
+      "use_cases": ["Thiết lập terminal làm việc hằng ngày với Git và các lệnh tắt cá nhân.", "Tổ chức lại .zshrc khi số lượng alias, plugin và hàm shell tăng lên."],
+      "requirements": ["Cần Zsh, Git và curl hoặc wget; một số theme cần Powerline Font hoặc Nerd Font.", "Trình cài đổi tên .zshrc cũ; cần chuyển lại các tùy chỉnh muốn giữ."],
+      "sources": [{"title": "Oh My Zsh — README", "url": "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "873328": {
+      "full_name": "getsentry/sentry",
+      "overview": "Sentry giúp phát hiện lỗi ứng dụng và xem ngữ cảnh để điều tra, thay vì chỉ nhận thông báo rằng một tính năng không hoạt động. Sau khi tích hợp SDK, bạn có thể đối chiếu exception, trace, log và bản phát lại phiên sử dụng để tìm nơi cần sửa.",
+      "capabilities": ["Thu thập exception và stack trace từ ứng dụng.", "Theo dõi request qua frontend và backend bằng tracing.", "Xem lại tương tác trình duyệt với Session Replay.", "Đối chiếu log và phản hồi người dùng với sự cố."],
+      "use_cases": ["Tái hiện và chẩn đoán lỗi JavaScript mà người dùng gặp trên website.", "Lần theo một request chậm qua nhiều thành phần ứng dụng."],
+      "requirements": ["Cần project Sentry, SDK phù hợp và cấu hình kết nối như DSN.", "JavaScript đã minify cần source map để stack trace dễ đọc; cách triển khai và cấu hình tùy nền tảng."],
+      "sources": [{"title": "Sentry — README", "url": "https://raw.githubusercontent.com/getsentry/sentry/master/README.md"}, {"title": "Sentry — JavaScript setup", "url": "https://docs.sentry.io/platforms/javascript.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "10744183": {
+      "full_name": "netdata/netdata",
+      "overview": "Netdata thu thập số liệu máy chủ, container và ứng dụng để người vận hành nhìn thấy hệ thống đang dùng tài nguyên ra sao. Bạn cài Agent trên máy cần theo dõi, xem dashboard và cấu hình cảnh báo; nhiều Agent có thể truyền dữ liệu về Parent để tập trung theo dõi.",
+      "capabilities": ["Theo dõi CPU, bộ nhớ, ổ đĩa, mạng và các dịch vụ có collector hỗ trợ.", "Hiển thị dashboard tương tác từ dữ liệu thu thập.", "Phát hiện bất thường và gửi cảnh báo qua các kênh được cấu hình.", "Tập trung số liệu nhiều Agent qua Netdata Parent."],
+      "use_cases": ["Tìm thời điểm máy chủ tăng CPU, thiếu bộ nhớ hoặc có vấn đề I/O.", "Theo dõi nhiều máy và container qua một hệ thống dashboard."],
+      "requirements": ["Cần cài Agent; một số collector phải cấu hình thủ công.", "Netdata Cloud là tùy chọn, không nên đồng nhất mọi khả năng cloud với bản Agent cục bộ."],
+      "sources": [{"title": "Netdata — README", "url": "https://raw.githubusercontent.com/netdata/netdata/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "11225014": {
+      "full_name": "etcd-io/etcd",
+      "overview": "etcd là kho khóa–giá trị phân tán để lưu dữ liệu quan trọng cần được nhiều thành phần hệ thống dùng chung. Bạn chạy một cụm rồi đọc, ghi bằng API hoặc etcdctl; các thành viên dùng Raft để thống nhất nhật ký sao chép.",
+      "capabilities": ["Lưu và truy xuất dữ liệu theo khóa qua API gRPC.", "Thao tác dữ liệu bằng CLI etcdctl.", "Sao chép nhật ký và đồng thuận giữa các thành viên bằng Raft.", "Hỗ trợ TLS và xác thực client bằng chứng chỉ."],
+      "use_cases": ["Lưu dữ liệu điều phối dùng chung giữa các thành phần hệ thống phân tán.", "Thử nghiệm cách cụm nhiều thành viên duy trì dữ liệu thống nhất."],
+      "requirements": ["Cần cấu hình giao tiếp client và giữa các thành viên; cổng mặc định tương ứng là 2379 và 2380.", "README khuyến nghị dùng release thay vì nhánh main có thể chưa ổn định."],
+      "sources": [{"title": "etcd — README và Getting started", "url": "https://raw.githubusercontent.com/etcd-io/etcd/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "17728164": {
+      "full_name": "hashicorp/terraform",
+      "overview": "Terraform quản lý hạ tầng bằng cấu hình có thể lưu trong Git, thay cho việc tạo và sửa tài nguyên hoàn toàn bằng thao tác thủ công. Bạn mô tả trạng thái mong muốn, xem kế hoạch thay đổi rồi apply; Terraform dùng quan hệ phụ thuộc để xác định thứ tự xử lý tài nguyên.",
+      "capabilities": ["Mô tả tài nguyên hạ tầng dưới dạng cấu hình.", "Xem execution plan trước khi áp dụng thay đổi.", "Xây đồ thị phụ thuộc và xử lý song song các tài nguyên độc lập.", "Kết nối dịch vụ thông qua provider plugin."],
+      "use_cases": ["Review thay đổi hạ tầng trong Git trước khi triển khai.", "Quản lý một nhóm tài nguyên có phụ thuộc thay vì tạo từng thành phần bằng tay."],
+      "requirements": ["Repo này là Terraform core, không chứa tất cả provider.", "Cần provider phù hợp với dịch vụ muốn quản lý và cấu hình quyền truy cập theo dịch vụ đó."],
+      "sources": [{"title": "Terraform — README và phạm vi core/provider", "url": "https://raw.githubusercontent.com/hashicorp/terraform/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "20580498": {
+      "full_name": "kubernetes/kubernetes",
+      "overview": "Kubernetes quản lý ứng dụng container trên nhiều máy thay vì để người vận hành điều khiển từng container riêng lẻ. Bạn khai báo workload và trạng thái mong muốn, rồi dùng các cơ chế của cụm để triển khai, duy trì và mở rộng ứng dụng.",
+      "capabilities": ["Triển khai workload container trên các máy trong cụm.", "Quản lý và duy trì trạng thái hoạt động của ứng dụng.", "Mở rộng số lượng phiên bản ứng dụng theo nhu cầu."],
+      "use_cases": ["Vận hành nhiều dịch vụ container trong cùng một cụm.", "Điều chỉnh quy mô ứng dụng mà không quản lý từng container thủ công."],
+      "requirements": ["Cần môi trường cụm Kubernetes và ứng dụng đóng gói trong container.", "Không dùng trực tiếp module k8s.io/kubernetes như thư viện; README chỉ dẫn tới các component được phát hành riêng."],
+      "sources": [{"title": "Kubernetes — README", "url": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/README.md"}, {"title": "Kubernetes — Tổng quan", "url": "https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "26783295": {
+      "full_name": "Kong/kong",
+      "overview": "Kong Gateway đặt một lớp trung gian trước các API để tập trung định tuyến, xác thực và kiểm soát lưu lượng. Thay vì tự thêm cùng một cơ chế vào từng service, bạn khai báo dịch vụ, route và plugin rồi đưa request của client qua gateway.",
+      "capabilities": ["Proxy, định tuyến và cân bằng tải tới API phía sau.", "Kiểm tra sức khỏe dịch vụ.", "Bổ sung xác thực và rate limiting bằng plugin.", "Biến đổi request/response và kết thúc kết nối TLS tại gateway."],
+      "use_cases": ["Bổ sung kiểm soát truy cập và giới hạn request trước các API hiện có.", "Điều phối lưu lượng tới nhiều microservice từ một điểm vào."],
+      "requirements": ["Ví dụ Docker Compose dùng PostgreSQL; dự án cũng có chế độ DB-less.", "Kong Kubernetes Ingress Controller là thành phần tích hợp riêng cho Kubernetes."],
+      "sources": [{"title": "Kong — README, Features và Getting started", "url": "https://raw.githubusercontent.com/Kong/kong/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "42408804": {
+      "full_name": "traefik/traefik",
+      "overview": "Traefik là reverse proxy và bộ cân bằng tải phù hợp với hệ thống dịch vụ thường xuyên thay đổi. Bạn kết nối nó với Docker, Kubernetes hoặc nguồn cấu hình khác để cập nhật tuyến theo ứng dụng đang chạy, thay vì sửa cấu hình proxy cho từng lần triển khai.",
+      "capabilities": ["Nhận cấu hình động mà không cần khởi động lại.", "Định tuyến và cân bằng tải tới dịch vụ.", "Tích hợp Let's Encrypt để cấp HTTPS.", "Hỗ trợ retry, circuit breaker, metrics và access log."],
+      "use_cases": ["Đưa nhiều ứng dụng Docker ra ngoài qua một reverse proxy.", "Cập nhật định tuyến khi microservice được thêm hoặc thay đổi quy mô."],
+      "requirements": ["Cần cấu hình provider phù hợp với môi trường, chẳng hạn Docker, Kubernetes hoặc File.", "Đọc migration guide khi nâng major version để xử lý thay đổi không tương thích."],
+      "sources": [{"title": "Traefik — README và supported backends", "url": "https://raw.githubusercontent.com/traefik/traefik/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "72495579": {
+      "full_name": "go-gitea/gitea",
+      "overview": "Gitea là dịch vụ Git có thể tự triển khai, kèm công cụ cộng tác quanh mã nguồn. Bạn lưu repository, review pull request, theo dõi issue và giữ tài liệu dự án trong cùng hệ thống thay vì chỉ có một máy chủ Git thuần túy.",
+      "capabilities": ["Lưu Git repository và review thay đổi qua pull request.", "Theo dõi issue và công việc bằng kanban.", "Cung cấp wiki và package registry.", "Kết hợp CI/CD với Gitea Actions."],
+      "use_cases": ["Dựng dịch vụ quản lý mã nguồn nội bộ cho nhóm.", "Gắn source code, issue, tài liệu và CI/CD vào cùng workflow."],
+      "requirements": ["Cần triển khai instance trên hạ tầng của bạn; có container image chính thức.", "Gitea Actions có runner riêng; thay đổi cấu hình tĩnh app.ini cần khởi động lại instance."],
+      "sources": [{"title": "Gitea — README và cấu hình", "url": "https://raw.githubusercontent.com/go-gitea/gitea/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "90796663": {
+      "full_name": "puppeteer/puppeteer",
+      "overview": "Puppeteer là thư viện JavaScript giúp điều khiển Chrome hoặc Firefox bằng mã. Bạn viết chương trình mở trang, nhập dữ liệu, click và đọc nội dung để tự động hóa những thao tác lặp lại trong trình duyệt.",
+      "capabilities": ["Khởi chạy trình duyệt, mở URL và cấu hình viewport.", "Nhập liệu, nhấn phím và click bằng locator.", "Chờ phần tử trước khi thực hiện thao tác.", "Đọc nội dung trên trang trong luồng tự động hóa."],
+      "use_cases": ["Kiểm tra luồng tìm kiếm hoặc biểu mẫu trên website.", "Tự động thu thập kết quả sau một chuỗi thao tác trình duyệt."],
+      "requirements": ["Đây là thư viện cần viết chương trình, không phải ứng dụng kéo-thả.", "Gói puppeteer có bước tải Chrome tương thích; puppeteer-core không tự tải trình duyệt."],
+      "sources": [{"title": "Puppeteer — README, cài đặt và ví dụ", "url": "https://raw.githubusercontent.com/puppeteer/puppeteer/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "162998479": {
+      "full_name": "sherlock-project/sherlock",
+      "overview": "Sherlock là CLI tra cứu một username trên nhiều website và mạng xã hội. Bạn cung cấp tên người dùng, xem các kết quả phù hợp rồi kiểm tra thủ công; việc trùng username không tự chứng minh các tài khoản thuộc cùng một người.",
+      "capabilities": ["Tra cứu một hoặc nhiều username trong một lần chạy.", "Giới hạn tìm kiếm theo website.", "Xuất kết quả TXT, CSV hoặc XLSX.", "Cấu hình proxy, thời gian chờ và mở kết quả bằng trình duyệt."],
+      "use_cases": ["Rà soát các tài khoản công khai mang username của chính mình.", "Tập hợp kết quả tìm kiếm để kiểm tra thủ công."],
+      "requirements": ["Có hướng dẫn cài qua pipx, pip, uv hoặc Docker.", "README cảnh báo một số tùy chọn và nguồn có thể tạo kết quả dương tính giả; cần kiểm tra kết quả."],
+      "sources": [{"title": "Sherlock — README trên GitHub", "url": "https://github.com/sherlock-project/sherlock"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "163883279": {
+      "full_name": "nektos/act",
+      "overview": "act chạy GitHub Actions trên máy cục bộ để bạn thử workflow mà không phải commit và push sau mỗi lần sửa. Công cụ đọc .github/workflows, xác định quan hệ phụ thuộc rồi chuẩn bị container và chạy các bước qua Docker API.",
+      "capabilities": ["Đọc và thực thi workflow GitHub Actions tại máy phát triển.", "Tải hoặc build container image cần cho tác vụ.", "Xử lý thứ tự thực thi theo quan hệ phụ thuộc.", "Tái sử dụng workflow CI làm bộ chạy tác vụ cục bộ."],
+      "use_cases": ["Thử thay đổi workflow trước khi đẩy lên GitHub.", "Dùng chung định nghĩa tác vụ build/test giữa CI và máy cá nhân."],
+      "requirements": ["Cách chạy container cần Docker API.", "Không mô phỏng đầy đủ GitHub-hosted runners; tài liệu liệt kê các phần chưa hỗ trợ như OIDC và một số thuộc tính job."],
+      "sources": [{"title": "act — README", "url": "https://raw.githubusercontent.com/nektos/act/master/README.md"}, {"title": "act — Unsupported functionality", "url": "https://nektosact.com/not_supported.html"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "180190854": {
+      "full_name": "appwrite/appwrite",
+      "overview": "Appwrite tập hợp các dịch vụ backend để ứng dụng web hoặc mobile không phải tự xây lại đăng nhập, dữ liệu, lưu tệp và function. Bạn tạo project, tích hợp SDK rồi gọi các dịch vụ cần dùng; có thể chọn dịch vụ cloud hoặc tự triển khai.",
+      "capabilities": ["Xác thực người dùng bằng nhiều phương thức.", "Lưu dữ liệu có cấu trúc và quản lý tệp.", "Chạy backend function theo sự kiện hoặc lịch.", "Hosting ứng dụng web bằng Appwrite Sites."],
+      "use_cases": ["Xây ứng dụng có đăng nhập, dữ liệu và tệp của người dùng.", "Kết hợp frontend với function xử lý nghiệp vụ mà không tự dựng từng dịch vụ nền tảng."],
+      "requirements": ["Hướng dẫn self-host trong README sử dụng Docker.", "Cần tạo project và tích hợp SDK; nâng cấp từ bản cũ có thể cần migration theo tài liệu."],
+      "sources": [{"title": "Appwrite — README và self-hosting", "url": "https://raw.githubusercontent.com/appwrite/appwrite/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "193215554": {
+      "full_name": "n8n-io/n8n",
+      "overview": "n8n dùng workflow trực quan để nối nhiều hệ thống thành quy trình tự động nhiều bước. Bạn ghép integration, xử lý dữ liệu và bổ sung logic khi cần, thay vì viết một script tích hợp mới cho mỗi tác vụ; dự án cũng hỗ trợ workflow có AI agent.",
+      "capabilities": ["Thiết kế workflow bằng giao diện trực quan.", "Kết nối dịch vụ bằng integration có sẵn.", "Bổ sung logic với JavaScript hoặc Python.", "Kết hợp mô hình AI, công cụ và bước phê duyệt của con người."],
+      "use_cases": ["Chuyển và xử lý dữ liệu giữa nhiều hệ thống theo một quy trình.", "Tạo workflow AI có gọi công cụ và chờ người duyệt trước bước tiếp theo."],
+      "requirements": ["Quickstart trong README dùng Docker và volume n8n_data để giữ dữ liệu.", "Cấu hình kết nối và quyền truy cập phụ thuộc các dịch vụ tham gia workflow."],
+      "sources": [{"title": "n8n — README và Quick start", "url": "https://raw.githubusercontent.com/n8n-io/n8n/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "212639071": {
+      "full_name": "bregman-arie/devops-exercises",
+      "overview": "DevOps Exercises là bộ câu hỏi và bài tập kỹ thuật để học, ôn và tự đánh giá kiến thức, không phải phần mềm triển khai hạ tầng. Bạn chọn chủ đề như Linux, mạng, Git, container hoặc CI/CD, tự trả lời và thực hành rồi đối chiếu lời giải khi có.",
+      "capabilities": ["Tra cứu câu hỏi theo nhóm công nghệ và chủ đề.", "Luyện tập qua bài có mục tiêu hoặc hướng dẫn.", "Đối chiếu câu trả lời, lời giải được cộng đồng cung cấp.", "Tham khảo FAQ về cách học và chuẩn bị phỏng vấn."],
+      "use_cases": ["Xác định phần kiến thức DevOps còn thiếu trước khi học sâu.", "Ôn lại khái niệm để chuẩn bị trao đổi hoặc phỏng vấn kỹ thuật."],
+      "requirements": ["Nhiều câu hỏi chưa có đáp án, cần tự nghiên cứu thêm.", "Không coi bộ câu hỏi là đề phỏng vấn thực tế hay bảo đảm nội dung sẽ được hỏi."],
+      "sources": [{"title": "DevOps Exercises — README", "url": "https://raw.githubusercontent.com/bregman-arie/devops-exercises/master/README.md"}, {"title": "DevOps Exercises — FAQ", "url": "https://raw.githubusercontent.com/bregman-arie/devops-exercises/master/faq.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "307260205": {
+      "full_name": "yt-dlp/yt-dlp",
+      "overview": "yt-dlp là CLI tải âm thanh và video từ các website được hỗ trợ. Bạn cung cấp URL hoặc playlist, chọn định dạng, phụ đề và cách đặt tên tệp để lưu nội dung có hệ thống thay vì tải từng mục bằng trình duyệt.",
+      "capabilities": ["Tải video riêng lẻ hoặc các mục trong playlist.", "Chọn định dạng, độ phân giải và luồng âm thanh.", "Lưu phụ đề và metadata đi kèm.", "Đặt tên theo mẫu và ghi lịch sử tải."],
+      "use_cases": ["Lưu nội dung bạn có quyền tải để học ngoại tuyến.", "Tổ chức thư viện media theo playlist và metadata."],
+      "requirements": ["Nhiều bước ghép luồng và hậu xử lý cần ffmpeg, ffprobe.", "Hỗ trợ YouTube đầy đủ cần yt-dlp-ejs và JavaScript runtime tương thích theo README."],
+      "sources": [{"title": "yt-dlp — README, Dependencies và Usage", "url": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "332880689": {
+      "full_name": "coollabsio/coolify",
+      "overview": "Coolify cung cấp giao diện quản lý triển khai ứng dụng và cơ sở dữ liệu trên hạ tầng bạn sở hữu. Bạn kết nối máy chủ qua SSH rồi quản lý tài nguyên từ Coolify, hướng tới trải nghiệm nền tảng triển khai ứng dụng mà không buộc tài nguyên nằm trên hạ tầng của một nhà cung cấp duy nhất.",
+      "capabilities": ["Kết nối và quản lý máy chủ qua SSH.", "Quản lý ứng dụng trên máy chủ riêng.", "Quản lý cơ sở dữ liệu cùng tài nguyên ứng dụng.", "Lưu cấu hình tài nguyên ngay trên máy chủ."],
+      "use_cases": ["Tập trung quản lý ứng dụng và database trên VPS.", "Tổ chức môi trường tự triển khai trên máy chủ vật lý."],
+      "requirements": ["Máy chủ được quản lý cần có kết nối SSH.", "README khuyến nghị tách máy chủ Coolify khỏi máy chủ chạy tài nguyên triển khai."],
+      "sources": [{"title": "Coolify — README và Installation", "url": "https://raw.githubusercontent.com/coollabsio/coolify/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "382496361": {
+      "full_name": "louislam/uptime-kuma",
+      "overview": "Uptime Kuma theo dõi website và dịch vụ có còn truy cập được hay không, rồi thông báo khi điểm kiểm tra gặp vấn đề. Bạn cấu hình monitor và kênh nhận cảnh báo, xem lịch sử trên web hoặc công bố tình trạng qua status page.",
+      "capabilities": ["Kiểm tra HTTP, TCP, Ping và DNS.", "Kiểm tra từ khóa hoặc dữ liệu JSON trong phản hồi HTTP.", "Gửi thông báo qua Telegram, Slack, email và các kênh hỗ trợ.", "Tạo nhiều trang trạng thái, gắn tên miền riêng và xem thông tin chứng chỉ."],
+      "use_cases": ["Theo dõi website và các dịch vụ tự host.", "Công bố tình trạng dịch vụ cho người sử dụng."],
+      "requirements": ["Dữ liệu cần nằm trên thư mục hoặc volume cục bộ; README không hỗ trợ NFS.", "Cài trực tiếp thay vì Docker cần Node.js và Git theo hướng dẫn."],
+      "sources": [{"title": "Uptime Kuma — README và Features", "url": "https://raw.githubusercontent.com/louislam/uptime-kuma/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "436297812": {
+      "full_name": "usememos/memos",
+      "overview": "Memos là ứng dụng ghi chú ngắn tự host, tổ chức ý tưởng, liên kết và nhật ký công việc thành dòng thời gian Markdown. Bạn ghi nhanh mà không phải chọn thư mục hay tiêu đề trước, rồi tìm lại bằng tìm kiếm, thẻ và mục ghim.",
+      "capabilities": ["Soạn ghi chú Markdown và đính kèm media.", "Duyệt nội dung theo dòng thời gian, tìm kiếm và gắn thẻ.", "Ghim ghi chú và chọn nội dung riêng tư hoặc công khai.", "Lưu trang web thành Markdown kèm nguồn qua Web Clipper."],
+      "use_cases": ["Ghi nhật ký xử lý công việc và các ý tưởng trong ngày.", "Lưu liên kết, trích đoạn và hình ảnh để đọc lại."],
+      "requirements": ["Quickstart dùng Docker với thư mục dữ liệu được ánh xạ ra ngoài container.", "Web Clipper là tiện ích riêng cho Chrome hoặc Firefox."],
+      "sources": [{"title": "Memos — README và Web Clipper", "url": "https://raw.githubusercontent.com/usememos/memos/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "455229168": {
+      "full_name": "immich-app/immich",
+      "overview": "Immich giúp quản lý thư viện ảnh và video trên máy chủ riêng nhưng vẫn truy cập từ điện thoại và trình duyệt. Bạn tải ảnh lên hoặc bật sao lưu trên mobile, sau đó tạo album, chia sẻ và tìm lại nội dung theo metadata, khuôn mặt hoặc đối tượng.",
+      "capabilities": ["Tải lên, xem và tải xuống ảnh/video.", "Sao lưu ảnh từ điện thoại, gồm sao lưu nền.", "Tạo album và album dùng chung.", "Tìm kiếm theo metadata, khuôn mặt, đối tượng và CLIP; xem EXIF và vị trí ảnh."],
+      "use_cases": ["Tập hợp ảnh gia đình từ nhiều điện thoại vào thư viện riêng.", "Tìm ảnh cũ và chia sẻ album theo sự kiện."],
+      "requirements": ["Ứng dụng mobile cần kết nối tới máy chủ Immich.", "README cảnh báo duy trì kế hoạch sao lưu độc lập theo nguyên tắc 3-2-1; không coi việc đưa ảnh vào Immich là đủ để bảo vệ dữ liệu."],
+      "sources": [{"title": "Immich — README, Features và Backup warning", "url": "https://raw.githubusercontent.com/immich-app/immich/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "594155488": {
+      "full_name": "Stirling-Tools/Stirling-PDF",
+      "overview": "Stirling PDF tập hợp các công cụ xử lý PDF trong giao diện desktop, web hoặc máy chủ có API. Bạn thực hiện các thao tác tài liệu thường gặp hoặc nối chúng thành pipeline, thay vì dùng nhiều công cụ riêng cho từng bước.",
+      "capabilities": ["Ghép, tách, chỉnh sửa, nén và chuyển đổi PDF.", "Nhận dạng văn bản bằng OCR.", "Ký tài liệu và che bỏ nội dung.", "Tạo pipeline xử lý hoặc tích hợp qua REST API."],
+      "use_cases": ["Chuẩn hóa và giảm dung lượng tài liệu trước khi chia sẻ.", "Tích hợp các bước xử lý PDF vào ứng dụng nghiệp vụ."],
+      "requirements": ["Phương án quickstart trong README cần Docker.", "Chọn cách chạy desktop hay server/API theo nhu cầu; tính năng và cấu hình cần đối chiếu phiên bản triển khai."],
+      "sources": [{"title": "Stirling PDF — README và Key capabilities", "url": "https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "701547123": {
+      "full_name": "open-webui/open-webui",
+      "overview": "Open WebUI là giao diện AI tự host để sử dụng mô hình cục bộ qua Ollama hoặc dịch vụ có API tương thích OpenAI trong cùng nơi làm việc. Bạn kết nối mô hình, trò chuyện và bổ sung tài liệu hoặc công cụ để tạo trợ lý phù hợp nhu cầu.",
+      "capabilities": ["Kết nối Ollama và các API tương thích OpenAI.", "Trò chuyện với nhiều mô hình qua một giao diện.", "Bổ sung tài liệu vào hội thoại bằng RAG.", "Mở rộng bằng plugin, MCP, OpenAPI và agent có chỉ dẫn riêng."],
+      "use_cases": ["Dùng chung giao diện cho mô hình local và nhà cung cấp từ xa.", "Hỏi đáp trên bộ tài liệu của cá nhân hoặc nhóm."],
+      "requirements": ["Cần cấu hình nguồn mô hình; Open WebUI không thay thế bản thân mô hình.", "Bản Docker cần volume dữ liệu để giữ cơ sở dữ liệu khi container thay đổi."],
+      "sources": [{"title": "Open WebUI — README, Features và Installation", "url": "https://raw.githubusercontent.com/open-webui/open-webui/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "725205304": {
+      "full_name": "unslothai/unsloth",
+      "overview": "Unsloth cung cấp công cụ chạy và huấn luyện mô hình AI, với cách dùng qua Desktop, Studio hoặc mã nguồn Core. Bạn chuẩn bị dữ liệu, chọn mô hình, thử suy luận hoặc fine-tuning rồi xuất mô hình để dùng trong ứng dụng khác.",
+      "capabilities": ["Chạy các nhóm mô hình ngôn ngữ, embedding, âm thanh và diffusion được hỗ trợ.", "Fine-tuning bằng LoRA, QLoRA hoặc toàn bộ tham số; có workflow reinforcement learning.", "Chuẩn bị dataset từ PDF, CSV và DOCX bằng Data Recipes.", "Xuất mô hình, gồm GGUF, hoặc phục vụ API tương thích OpenAI."],
+      "use_cases": ["Thử mô hình local trước khi tích hợp vào ứng dụng.", "Tinh chỉnh mô hình trên dữ liệu riêng rồi xuất để triển khai."],
+      "requirements": ["Cấu hình phần cứng và cách cài phụ thuộc GPU; AMD và Intel có hướng dẫn riêng.", "Khi chạy container dùng GPU trên Linux, cần thiết lập quyền truy cập GPU theo tài liệu."],
+      "sources": [{"title": "Unsloth — README, Features và Installation", "url": "https://raw.githubusercontent.com/unslothai/unsloth/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "771302083": {
+      "full_name": "OpenHands/OpenHands",
+      "overview": "README hiện giới thiệu OpenHands Agent Canvas, một giao diện điều khiển và điều phối coding agent có thể tự triển khai. Bạn mở hội thoại, chọn backend chạy agent và thiết lập automation; repo tập trung vào giao diện cùng local stack chứ không chứa toàn bộ SDK của hệ OpenHands.",
+      "capabilities": ["Kết nối nhiều agent backend, gồm OpenHands và agent tương thích ACP.", "Chạy agent local, trong Docker hoặc trên máy từ xa.", "Thiết lập automation theo lịch hoặc webhook.", "Kết nối workflow với Slack và GitHub."],
+      "use_cases": ["Quản lý các agent cá nhân hoặc dùng chung trong nhóm.", "Thiết lập công việc định kỳ hoặc xử lý issue theo sự kiện."],
+      "requirements": ["Cài trực tiếp cần Node.js và uv theo phiên bản được README chỉ định.", "Chế độ không sandbox cho agent quyền truy cập toàn bộ hệ thống tệp; cần cân nhắc quyền trước khi sử dụng."],
+      "sources": [{"title": "OpenHands — README, Agent Canvas và repository boundaries", "url": "https://raw.githubusercontent.com/OpenHands/OpenHands/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "793375104": {
+      "full_name": "Shubhamsaboo/awesome-llm-apps",
+      "overview": "Awesome LLM Apps là bộ sưu tập mã mẫu và hướng dẫn xây ứng dụng LLM, agent và RAG, không phải một dịch vụ thống nhất để bật toàn bộ. Bạn chọn thư mục mẫu, đọc hướng dẫn rồi chạy riêng để học cách kết hợp mô hình, dữ liệu và công cụ.",
+      "capabilities": ["Tập hợp ví dụ agent đơn và nhóm nhiều agent.", "Cung cấp mẫu RAG local hoặc dùng dịch vụ cloud.", "Minh họa voice agent, tích hợp MCP và bộ nhớ hội thoại.", "Cung cấp agent skills cùng hướng dẫn framework."],
+      "use_cases": ["Học qua mã mẫu hỏi đáp tài liệu hoặc phân tích dữ liệu.", "Chọn điểm khởi đầu cho một nguyên mẫu ứng dụng AI."],
+      "requirements": ["Cài dependency và chạy theo từng thư mục, không có một lệnh chạy chung cho toàn bộ.", "Mẫu dùng API cần khóa nhà cung cấp tương ứng; không mặc định mọi mẫu đều miễn phí hoặc local."],
+      "sources": [{"title": "Awesome LLM Apps — README và các template", "url": "https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "872119017": {
+      "full_name": "D4Vinci/Scrapling",
+      "overview": "Scrapling là framework Python để tải và trích xuất dữ liệu web, từ một trang tới crawler nhiều trang. Bạn chọn cách tải HTTP hoặc trình duyệt, xác định dữ liệu bằng selector rồi xây spider; cơ chế thích ứng hỗ trợ tìm lại phần tử khi cấu trúc trang thay đổi.",
+      "capabilities": ["Trích xuất bằng CSS, XPath, văn bản và regex.", "Tải trang động bằng trình duyệt.", "Crawl đồng thời với nhiều session.", "Lưu checkpoint để tiếp tục tác vụ và xuất JSON, JSONL, CSV hoặc XML."],
+      "use_cases": ["Thu thập dữ liệu có cấu trúc từ các trang được phép truy cập.", "Xây quy trình nhập dữ liệu web có thể tiếp tục sau khi tạm dừng."],
+      "requirements": ["Gói cơ bản chỉ có parser; fetcher, spider và thành phần trình duyệt cần dependency bổ sung.", "README yêu cầu tôn trọng điều khoản website, robots.txt và quy định dữ liệu."],
+      "sources": [{"title": "Scrapling — README, Installation và Disclaimer", "url": "https://raw.githubusercontent.com/D4Vinci/Scrapling/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "896335270": {
+      "full_name": "punkpeye/awesome-mcp-servers",
+      "overview": "Awesome MCP Servers là danh sách tuyển chọn các MCP server, không phải một server duy nhất có toàn bộ tính năng được liệt kê. Bạn duyệt theo nhu cầu, xem ngôn ngữ và nền tảng rồi mở repo của từng server để đánh giá cách kết nối dữ liệu hoặc công cụ với ứng dụng AI.",
+      "capabilities": ["Phân loại server theo database, tệp, trình duyệt và nhiều nhóm công việc.", "Gắn ký hiệu ngôn ngữ triển khai và hệ điều hành.", "Phân biệt nguồn tài nguyên local với dịch vụ cloud.", "Liên kết tới client, tutorial và framework MCP."],
+      "use_cases": ["Tìm ứng viên MCP server để tích hợp công cụ dev.", "Khảo sát các lựa chọn trước khi cài một server cụ thể."],
+      "requirements": ["Danh sách gồm cả triển khai thử nghiệm; cần kiểm tra tài liệu và yêu cầu của từng server.", "Clone danh sách này không đồng nghĩa đã cài các server được giới thiệu."],
+      "sources": [{"title": "Awesome MCP Servers — README và Legend", "url": "https://raw.githubusercontent.com/punkpeye/awesome-mcp-servers/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "955620917": {
+      "full_name": "upstash/context7",
+      "overview": "Context7 đưa tài liệu và ví dụ sử dụng thư viện vào ngữ cảnh coding agent để giảm việc trả lời theo API cũ hoặc không phù hợp. Bạn kết nối MCP hoặc CLI kết hợp skill, nêu thư viện và câu hỏi để agent lấy phần tài liệu liên quan.",
+      "capabilities": ["Tìm thư viện và trả về Context7 library ID.", "Truy vấn tài liệu theo câu hỏi cụ thể.", "Tra cứu phiên bản được nêu trong yêu cầu khi nguồn hỗ trợ.", "Tích hợp với agent qua MCP hoặc CLI và skill."],
+      "use_cases": ["Bổ sung tài liệu khi agent viết mã tích hợp thư viện.", "Kiểm tra cách dùng API mà không phải chuyển nhiều tab tài liệu."],
+      "requirements": ["CLI cần Node.js theo yêu cầu trong README.", "Repo không chứa backend API, parser và crawler của toàn nền tảng; README không bảo đảm mọi tài liệu đều đầy đủ hay chính xác."],
+      "sources": [{"title": "Context7 — README, Tools và Disclaimer", "url": "https://raw.githubusercontent.com/upstash/context7/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "968197216": {
+      "full_name": "google-gemini/gemini-cli",
+      "overview": "Gemini CLI đưa AI agent vào terminal để bạn hỏi về codebase, sửa lỗi và thực hiện tác vụ ngay trong thư mục dự án. Có thể dùng hội thoại tương tác hoặc gọi không tương tác từ script, với ngữ cảnh và công cụ được cấu hình cho công việc.",
+      "capabilities": ["Đọc, truy vấn và chỉnh sửa codebase.", "Thực hiện thao tác tệp và lệnh shell.", "Tìm kiếm Google, lấy nội dung web và mở rộng qua MCP.", "Xuất phản hồi JSON hoặc luồng sự kiện JSON."],
+      "use_cases": ["Tìm hiểu dự án và hỗ trợ điều tra lỗi bằng ngôn ngữ tự nhiên.", "Tích hợp bước hỗ trợ lập trình vào script cần đầu ra có cấu trúc."],
+      "requirements": ["Cần xác thực bằng tài khoản Google, Gemini API key hoặc Vertex AI.", "MCP server bổ sung cần được cấu hình riêng trong settings."],
+      "sources": [{"title": "Gemini CLI — README và Authentication", "url": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "974186260": {
+      "full_name": "sansan0/TrendRadar",
+      "overview": "TrendRadar tổng hợp tin nổi bật và RSS để bạn theo dõi chủ đề quan tâm mà không liên tục mở từng bảng tin. Bạn cấu hình nguồn, bộ lọc, lịch và kênh nhận báo cáo; các bước AI như dịch hoặc phân tích là khả năng bổ sung của công cụ, không phải chức năng của RepoRadar.",
+      "capabilities": ["Tổng hợp bảng tin và nguồn RSS/Atom.", "Lọc, nhóm tin bằng từ khóa hoặc biểu thức chính quy.", "Lập lịch thu thập và tạo báo cáo HTML hoặc Markdown.", "Gửi báo cáo qua Telegram, Slack, email hoặc webhook."],
+      "use_cases": ["Nhận bản tổng hợp định kỳ về chủ đề cần theo dõi.", "Chia sẻ tin theo ngành cho nhóm qua kênh liên lạc chung."],
+      "requirements": ["Dữ liệu bảng tin dùng newsnow; có thể cấu hình địa chỉ tự triển khai.", "Cần cấu hình kênh nhận; khi dùng GitHub phải lưu webhook trong Secrets, không trong tệp công khai."],
+      "sources": [{"title": "TrendRadar — README, Features và Configuration", "url": "https://raw.githubusercontent.com/sansan0/TrendRadar/master/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "995029641": {
+      "full_name": "ruvnet/ruflo",
+      "overview": "Ruflo bổ sung lớp điều phối, bộ nhớ và công cụ quanh coding agent như Claude Code hoặc Codex. Bạn chia một mục tiêu thành công việc cho các agent chuyên trách và giữ ngữ cảnh dùng lại qua nhiều phiên thay vì chỉ làm việc với một cuộc hội thoại đơn lẻ.",
+      "capabilities": ["Điều phối nhóm agent phụ trách code, test, review và tài liệu.", "Lưu và truy xuất bộ nhớ dùng chung, hỗ trợ tìm kiếm phục vụ RAG.", "Cung cấp CLI, MCP server và plugin theo nhóm chức năng.", "Định nghĩa workflow nhiều bước, theo dõi mục tiêu và chi phí token."],
+      "use_cases": ["Chia một đợt refactor thành phần triển khai, bổ sung test và review do các agent khác nhau xử lý."],
+      "requirements": ["Plugin nhẹ không tương đương CLI đầy đủ; không phải mọi plugin tự đăng ký MCP server.", "Khởi tạo CLI tạo cấu hình, hooks và tệp hướng dẫn trong workspace; cần xem thay đổi trước khi áp dụng vào dự án."],
+      "sources": [{"title": "Ruflo — README tại phiên bản đã đọc", "url": "https://github.com/ruvnet/ruflo/blob/9576a1032b0749ac12d08fd9d05b86d4bee893b5/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1048065319": {
+      "full_name": "thedotmack/claude-mem",
+      "overview": "Claude-Mem lưu hoạt động và ngữ cảnh của agent để bạn tìm lại quyết định, thử nghiệm và công việc từ phiên trước. README tại thời điểm đọc dùng tên Grok Mem nhưng giữ package claude-mem; mục tiêu chính là cung cấp bộ nhớ có thể truy xuất, không phải thay thế coding agent.",
+      "capabilities": ["Ghi phiên làm việc, quan sát và tóm tắt vào cơ sở dữ liệu.", "Tìm ký ức theo nội dung, dự án, loại và thời gian.", "Truy xuất theo chỉ mục, dòng thời gian rồi chi tiết để chọn ngữ cảnh cần dùng.", "Xem ký ức qua giao diện web và loại nội dung bằng thẻ private."],
+      "use_cases": ["Tiếp tục xử lý lỗi ở phiên mới bằng cách tìm lại những cách đã thử và quyết định trước đó."],
+      "requirements": ["Cần các runtime theo README; cài npm toàn cục chỉ cung cấp SDK/library, không tự đăng ký hooks hoặc worker.", "Cần chọn nhà cung cấp xử lý ký ức; không mặc định mọi chế độ hoàn toàn local."],
+      "sources": [{"title": "Claude-Mem — README tại phiên bản đã đọc", "url": "https://github.com/thedotmack/claude-mem/blob/1461655740297a34e11d721b612eb682db3f2ea7/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1054793726": {
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "overview": "Chrome DevTools MCP cho coding agent điều khiển và kiểm tra Chrome đang chạy. Bạn có thể nhờ agent tái hiện lỗi giao diện, đọc console, xem request và ghi trace để chẩn đoán bằng trạng thái trình duyệt thật thay vì chỉ suy luận từ code.",
+      "capabilities": ["Ghi performance trace và lấy thông tin phục vụ tối ưu trang.", "Đọc network request, console và stack trace có source map.", "Chụp ảnh màn hình để đối chiếu giao diện.", "Tự động hóa thao tác Chrome bằng Puppeteer; có cả CLI ngoài MCP."],
+      "use_cases": ["Điều tra trang tải chậm bằng trace, request mạng và lỗi console trong cùng phiên.", "Cho agent tái hiện một lỗi UI trước khi sửa code."],
+      "requirements": ["Cần Node.js LTS, npm và Chrome phù hợp yêu cầu hiện tại.", "MCP client có thể truy cập nội dung phiên Chrome; tránh dùng phiên chứa dữ liệu nhạy cảm và đọc các tùy chọn telemetry."],
+      "sources": [{"title": "Chrome DevTools MCP — README và privacy disclaimers", "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/c54a49383a47e10c445ab9997fd0032fc7acf177/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1061953414": {
+      "full_name": "anthropics/skills",
+      "overview": "Đây là kho skill của Anthropic: các gói hướng dẫn, script và tài nguyên giúp Claude thực hiện tác vụ chuyên biệt. Bạn chọn skill phù hợp hoặc dùng cấu trúc mẫu để xây workflow riêng; repo không phải một agent độc lập hay MCP server.",
+      "capabilities": ["Cung cấp skill xử lý Word, PDF, PowerPoint và Excel.", "Minh họa workflow thiết kế frontend, kiểm thử web và xây MCP server.", "Đóng gói hướng dẫn và metadata trong thư mục có SKILL.md.", "Cung cấp template và các nhóm skill để tích hợp vào môi trường Claude."],
+      "use_cases": ["Dùng skill frontend-design để định hướng thiết kế website.", "Xây skill áp dụng quy tắc thương hiệu hoặc xử lý hồ sơ của tổ chức."],
+      "requirements": ["Cách dùng tùy Claude Code, Claude.ai hoặc API; cần kiểm tra khả năng môi trường đang dùng.", "Giấy phép không đồng nhất: các skill tài liệu được công bố dạng source-available; cần đọc license của skill cụ thể."],
+      "sources": [{"title": "Anthropic Skills — README và cấu trúc skill", "url": "https://github.com/anthropics/skills/blob/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1073224795": {
+      "full_name": "obra/superpowers",
+      "overview": "Superpowers là bộ skill hướng coding agent làm phần mềm theo quy trình: làm rõ yêu cầu, duyệt thiết kế, chia việc rồi triển khai và kiểm chứng. Nó giúp đặt các bước kiểm soát quanh quá trình sinh mã, thay vì giao một yêu cầu lớn rồi chỉ kiểm tra kết quả cuối.",
+      "capabilities": ["Dẫn dắt brainstorming và làm rõ thiết kế.", "Chia kế hoạch thành nhiệm vụ nhỏ có đường dẫn và bước xác minh.", "Hướng dẫn TDD và debug có hệ thống.", "Tổ chức subagent, review và Git worktree cho các phần việc."],
+      "use_cases": ["Phát triển tính năng từ mô tả sơ bộ đến bản có test và review.", "Sửa lỗi theo quy trình tìm nguyên nhân và kiểm chứng bản sửa."],
+      "requirements": ["Cần cài theo coding-agent harness đang dùng; cách tích hợp khác nhau giữa nền tảng.", "Skill là hướng dẫn quy trình, không bảo đảm mã sinh ra luôn đúng hoặc đã được kiểm thử đầy đủ."],
+      "sources": [{"title": "Superpowers — README và workflow", "url": "https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1078079172": {
+      "full_name": "ComposioHQ/awesome-claude-skills",
+      "overview": "Awesome Claude Skills là danh mục skill, plugin và tài nguyên, kèm một số workflow đặt trực tiếp trong repo. Bạn tìm giải pháp theo công việc rồi cài phần phù hợp; bản thân danh mục không tự thực hiện mọi tác vụ được liệt kê.",
+      "capabilities": ["Phân loại skill cho tài liệu, lập trình, dữ liệu và marketing.", "Cung cấp workflow viết changelog, tổ chức hóa đơn và kiểm thử web.", "Liệt kê skill tích hợp CRM, email và quản lý dự án.", "Có connect-apps để thiết lập kết nối ứng dụng qua Composio."],
+      "use_cases": ["Tìm skill biến lịch sử commit thành ghi chú phát hành dễ đọc.", "Tạo issue và gửi thông báo qua những tài khoản ứng dụng đã kết nối."],
+      "requirements": ["Thao tác thật cần công cụ, quyền và kết nối tương ứng; skill chỉ mô tả workflow.", "Connect-apps cần Composio API key và xác thực ứng dụng; license từng skill có thể khác nhau."],
+      "sources": [{"title": "Awesome Claude Skills — README và connect-apps", "url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/be2a406907dbc61b73e6827ded415c96139d13a2/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1108837393": {
+      "full_name": "code-yeongyu/oh-my-openagent",
+      "overview": "Oh My OpenAgent bổ sung điều phối nhiều agent và công cụ phát triển quanh môi trường coding agent. Bạn chọn bản phù hợp với host rồi giao công việc lập kế hoạch, nghiên cứu và triển khai cho các vai trò chuyên trách; README phân biệt các bản cho OpenCode, Codex và một bản độc lập còn beta.",
+      "capabilities": ["Phân công agent chuyên trách lập kế hoạch, tìm tài liệu và triển khai.", "Chạy công việc nền song song; có Team Mode tùy chọn.", "Dùng LSP để chẩn đoán, điều hướng symbol và đổi tên.", "Bổ sung tìm kiếm AST, MCP tra cứu và nạp quy tắc dự án."],
+      "use_cases": ["Khảo sát codebase rồi giao các phần triển khai độc lập cho nhiều agent."],
+      "requirements": ["Các bản cần host tương ứng và không có mức tính năng ngang nhau.", "Cần quyền truy cập nhà cung cấp mô hình; đọc cấu hình telemetry và cài đúng package chính thức."],
+      "sources": [{"title": "Oh My OpenAgent — README và editions", "url": "https://github.com/code-yeongyu/oh-my-openagent/blob/f2a9880a403eefd70609a318d6250661c7193a73/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1129940957": {
+      "full_name": "headroomlabs-ai/headroom",
+      "overview": "Headroom xử lý và nén ngữ cảnh trước khi dữ liệu được gửi tới LLM. Bạn đặt thư viện, proxy hoặc MCP server giữa ứng dụng với mô hình để rút gọn log, kết quả công cụ và nội dung dài, đồng thời giữ khả năng lấy lại bản gốc khi cần.",
+      "capabilities": ["Chọn bộ nén theo dữ liệu JSON, code hoặc văn bản.", "Lưu bản gốc cục bộ để truy xuất chi tiết.", "Tích hợp qua SDK Python, TypeScript hoặc proxy API.", "Cung cấp bộ nhớ giữa agent và theo dõi lượng token tiết kiệm."],
+      "use_cases": ["Rút gọn log và kết quả tìm kiếm dài trước một phiên điều tra lỗi bằng agent."],
+      "requirements": ["CLI thuộc package Python; package npm là SDK.", "Cần đo hiệu quả trên dữ liệu thật; dữ liệu đã cô đọng có thể giảm ít. Nén local không có nghĩa request tới LLM cũng local."],
+      "sources": [{"title": "Headroom — README, compression và limitations", "url": "https://github.com/headroomlabs-ai/headroom/blob/10d8f15bc7a3bcc455c0cb62994e06e63b11fc4e/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1130564872": {
+      "full_name": "koala73/worldmonitor",
+      "overview": "World Monitor là dashboard tổng hợp tin tức và dữ liệu về địa chính trị, thị trường, thiên tai và hạ tầng. Bạn theo dõi các lớp bản đồ và bản tin để đối chiếu tình hình; đây là ứng dụng quan sát thông tin, không chỉ là bộ skill hay công cụ DevOps.",
+      "capabilities": ["Tổng hợp tin theo khu vực và chủ đề, có hỗ trợ tạo bản tin bằng AI.", "Hiển thị địa cầu 3D hoặc bản đồ phẳng với các lớp dữ liệu.", "Đối chiếu tín hiệu kinh tế, thiên tai và hạ tầng.", "Cung cấp biến thể chuyên đề và cách truy cập qua desktop, MCP, CLI hoặc SDK."],
+      "use_cases": ["Chuẩn bị bản tin khu vực bằng cách đối chiếu nguồn tin với dữ liệu bản đồ."],
+      "requirements": ["Ứng dụng cơ bản có thể chạy không cần biến môi trường, nhưng từng nguồn dữ liệu có thể cần credentials.", "Gọi tool trên MCP công khai cần API key hoặc OAuth theo README."],
+      "sources": [{"title": "World Monitor — README, dashboard và API", "url": "https://github.com/koala73/worldmonitor/blob/aaee0a989770904b9a377a5e984970189c559df2/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1136590548": {
+      "full_name": "affaan-m/ECC",
+      "overview": "ECC kết hợp skill, agent chuyên trách, rules, hooks và bộ nhớ để chuẩn hóa cách coding agent làm việc. Bạn chọn thành phần cho dự án rồi áp dụng quy trình từ lập kế hoạch đến test, triển khai và review, thay vì viết lại các yêu cầu này trong mỗi prompt.",
+      "capabilities": ["Cung cấp workflow TDD, sửa build, review và kiểm thử đầu cuối.", "Lưu, khôi phục phiên và quản lý ngân sách ngữ cảnh.", "Quét cấu hình agent, hooks, MCP, quyền và secrets bằng AgentShield.", "Chọn các gói quy tắc theo ngôn ngữ và nhu cầu dự án."],
+      "use_cases": ["Chuẩn hóa quy trình thêm tính năng: lên kế hoạch, viết test trước và review bằng ngữ cảnh mới."],
+      "requirements": ["Cần runtime và host tương ứng; mức hỗ trợ khác nhau giữa các nền tảng.", "Không chồng nhiều cách cài vào cùng host vì có thể nhân đôi hooks hoặc skills; một số lệnh cần runtime bổ sung."],
+      "sources": [{"title": "ECC — README và selective installation", "url": "https://github.com/affaan-m/ECC/blob/cc91c24f9a35dc79811f2326b6cbf4a74739009a/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1158722119": {
+      "full_name": "addyosmani/agent-skills",
+      "overview": "Agent Skills của Addy Osmani là bộ workflow kỹ thuật và checklist để hướng coding agent đi từ yêu cầu tới phát hành. Bạn dùng các skill để đặt tiêu chí chất lượng và bước kiểm chứng cụ thể, thay vì chỉ yêu cầu agent sinh mã rồi tự cho là hoàn thành.",
+      "capabilities": ["Phỏng vấn yêu cầu và viết đặc tả trước khi lập trình.", "Chia công việc thành thay đổi nhỏ có test và bước xác minh.", "Hướng dẫn review chất lượng, bảo mật, accessibility và hiệu năng web.", "Ghi tiêu chuẩn dự án trong CONSTRAINTS.md và dùng checklist kiểm chứng."],
+      "use_cases": ["Đưa một tính năng mới qua quy trình đặc tả, triển khai, review và phát hành.", "Bổ sung các bước kiểm chứng vào workflow của codebase hiện hữu."],
+      "requirements": ["Cần agent hỗ trợ skill hoặc tệp hướng dẫn; cách tích hợp tùy nền tảng.", "Cài một skill riêng không tự mang theo thư mục references dùng chung ở gốc repo."],
+      "sources": [{"title": "Agent Skills — README và quality gates", "url": "https://github.com/addyosmani/agent-skills/blob/6ca0cd7db39b41b1c37e26d335c507ee92382c6d/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1182081931": {
+      "full_name": "Egonex-AI/Understand-Anything",
+      "overview": "Understand Anything phân tích dự án thành knowledge graph và dashboard để người dùng hiểu codebase qua quan hệ giữa tệp, hàm, lớp và nghiệp vụ. Bạn tạo bản đồ rồi tìm kiếm, hỏi đáp hoặc theo hướng dẫn khám phá, thay vì đọc toàn bộ dự án từ đầu.",
+      "capabilities": ["Kết hợp Tree-sitter trích cấu trúc với LLM mô tả ngữ nghĩa.", "Hiển thị lớp kiến trúc, quan hệ và hướng dẫn khám phá.", "Phân tích ảnh hưởng của diff và ánh xạ code sang luồng nghiệp vụ.", "Cập nhật tăng dần và chia sẻ graph JSON để đồng đội xem lại."],
+      "use_cases": ["Giúp thành viên mới tìm hiểu luồng nghiệp vụ và các module liên quan.", "Xem phạm vi ảnh hưởng trước khi sửa thành phần dùng chung."],
+      "requirements": ["Phân tích ban đầu có thể tiêu tốn nhiều token; mô hình local cần cấu hình ở nền tảng agent.", "Viewer chỉ cần Node.js và graph đã tạo; xem graph không cần chạy LLM lại."],
+      "sources": [{"title": "Understand Anything — README và standalone viewer", "url": "https://github.com/Egonex-AI/Understand-Anything/blob/5feed1f2ce4f9c368d860f4c0ebc36d98a4693fc/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1200597263": {
+      "full_name": "Graphify-Labs/graphify",
+      "overview": "Graphify biến mã nguồn và tài liệu thành knowledge graph để truy vấn quan hệ giữa các thành phần. Bạn tạo graph rồi tìm đường liên hệ, giải thích thành phần hoặc mở bản đồ HTML, thay vì đọc lại cả tập tệp mỗi khi có câu hỏi.",
+      "capabilities": ["Phân tích code bằng Tree-sitter cục bộ, không cần LLM cho corpus chỉ có code.", "Phân biệt quan hệ trích xuất trực tiếp và quan hệ suy diễn.", "Xuất JSON, HTML và báo cáo Markdown; hỗ trợ query, path và explain.", "Gom cụm thành phần và cung cấp graph qua MCP tùy chọn."],
+      "use_cases": ["Tìm liên hệ từ module xác thực đến lớp truy cập dữ liệu.", "Chia sẻ bản đồ codebase với nhóm bảo trì."],
+      "requirements": ["Package chính thức là graphifyy, còn lệnh CLI là graphify; cần Python phù hợp.", "Phân tích ngữ nghĩa tài liệu/media có thể dùng mô hình của assistant hoặc backend riêng; cần cập nhật graph khi code thay đổi."],
+      "sources": [{"title": "Graphify — README, extraction và privacy boundaries", "url": "https://github.com/Graphify-Labs/graphify/blob/3f82bf7f837a07fb0f7668fbdbd5662801906942/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1223170290": {
+      "full_name": "nexu-io/open-design",
+      "overview": "OpenDesign là ứng dụng thiết kế local-first kết nối coding agent hoặc mô hình để tạo sản phẩm bằng các tệp thực. Bạn nhập brief, chọn design system rồi chỉnh prototype, slide hoặc tài liệu trong không gian có hội thoại, tệp và preview.",
+      "capabilities": ["Tạo prototype web, mobile và dashboard theo brief/template.", "Áp dụng design system có DESIGN.md để giữ quy tắc thương hiệu.", "Xem hội thoại, tệp tạo ra và preview trong cùng Studio.", "Xuất HTML, PDF, PPTX hoặc MP4 theo workflow tương ứng."],
+      "use_cases": ["Tạo landing page theo thương hiệu rồi bàn giao HTML/CSS cho nhóm frontend.", "Chuẩn bị bộ slide sản phẩm từ brief và tài sản thiết kế."],
+      "requirements": ["Cần coding-agent CLI hoặc cấu hình mô hình được hỗ trợ.", "Bản desktop dựng sẵn được README nêu cho macOS và Windows; Linux cần chạy source. Một số chức năng vẫn nằm trong roadmap."],
+      "sources": [{"title": "OpenDesign — README, exports và roadmap", "url": "https://github.com/nexu-io/open-design/blob/be0887b39273993d939e83c4768922115f104bed/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    },
+    "1266797999": {
+      "full_name": "DietrichGebert/ponytail",
+      "overview": "Ponytail là bộ skill và quy tắc hướng coding agent tránh viết thêm mã hoặc abstraction khi chưa cần. Bạn dùng nó để ưu tiên tái sử dụng code, thư viện chuẩn và tính năng native, đồng thời review những phần thiết kế quá mức trong thay đổi.",
+      "capabilities": ["Đặt thứ tự lựa chọn từ bỏ phần không cần tới triển khai tối thiểu.", "Review diff để chỉ ra wrapper hoặc abstraction dư thừa.", "Audit repository và gom các khoản nợ được đánh dấu.", "Điều chỉnh mức lite, full hoặc ultra ở host hỗ trợ."],
+      "use_cases": ["Chọn input ngày native khi yêu cầu chưa cần thư viện date picker.", "Rà soát pull request để bỏ lớp trung gian chưa có nhu cầu thực tế."],
+      "requirements": ["Hooks ở các plugin được hỗ trợ cần Node.js trên PATH; adapter chỉ nạp instruction không có mọi tính năng.", "Quy tắc không cho cắt validation, bảo mật, xử lý mất dữ liệu hoặc accessibility chỉ để giảm mã."],
+      "sources": [{"title": "Ponytail — README và host requirements", "url": "https://github.com/DietrichGebert/ponytail/blob/356918eba965ee1eac64bd3a7f0dd02108350de5/README.md"}],
+      "reviewed_at": "2026-09-10T04:17:05Z", "provenance": "ai-assisted-source-review"
+    }
+  }
+}

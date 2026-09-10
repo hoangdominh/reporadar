@@ -1,0 +1,83 @@
+# DISABLED LOCAL DRAFT: this extension is intentionally NOT .yml or .yaml.
+# No workflow can run from this file. Never rename/activate without separate approval.
+# Version references below are NOT verified SHA pins. Validate trusted action commits,
+# permissions, quota, branch protection and Pages settings before activation.
+name: Refresh, persist and deploy RepoRadar (draft)
+on:
+  schedule:
+    - cron: '0 17 * * *' # 00:00 Asia/Ho_Chi_Minh; no exact-minute SLA
+  workflow_dispatch:
+
+concurrency:
+  group: reporadar-publication
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    outputs:
+      refresh_code: ${{ steps.collect.outputs.code }}
+    steps:
+      - uses: actions/checkout@v4 # Pending trusted SHA verification
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: true # Needed for normal, non-force data persistence
+      - uses: actions/setup-node@v4 # Pending trusted SHA verification
+        with:
+          node-version: '22'
+      - name: Offline gates before refresh
+        run: npm run verify
+      - name: Collect bounded metadata and report failures
+        id: collect
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set +e
+          node scripts/refresh.mjs > "$RUNNER_TEMP/reporadar-summary.json"
+          code=$?
+          set -e
+          printf 'code=%s\n' "$code" >> "$GITHUB_OUTPUT"
+          printf '## Metadata refresh\n\n```json\n' >> "$GITHUB_STEP_SUMMARY"
+          cat "$RUNNER_TEMP/reporadar-summary.json" >> "$GITHUB_STEP_SUMMARY"
+          printf '\n```\n' >> "$GITHUB_STEP_SUMMARY"
+          if [ "$code" -ne 0 ] && [ "$code" -ne 2 ]; then exit 1; fi
+      - name: Validate, test and build the exact merged dataset
+        run: npm run verify
+      - name: Persist only validated JSON; stop on conflicting push
+        shell: bash
+        run: |
+          git add -- data/repositories.json
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh bounded repository selections'
+            git push
+          fi
+      - uses: actions/upload-pages-artifact@v3 # Pending trusted SHA verification
+        with:
+          path: dist
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4 # Pending trusted SHA verification
+        id: deployment
+      - name: Report partial failure after deploying successful topics
+        if: needs.refresh.outputs.refresh_code == '2'
+        run: |
+          printf 'Partial refresh: successful topics deployed; failed topics retained. Review refresh summary.\n' >> "$GITHUB_STEP_SUMMARY"
+          exit 1
